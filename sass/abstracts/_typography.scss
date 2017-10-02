@@ -1,0 +1,251 @@
+//  --------------------------------------------------
+//  Typography abstracts
+
+//  - rules for how type should appear on the page
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+
+    .a-glyph {
+      width: rem(16px);
+      height: rem(16px);
+    }
+
+    .a-allCaps {
+      text-transform: uppercase;
+    }
+
+    .a-spaceAfter {
+      margin-bottom: rem(56px);
+
+      &--\(32\) {
+        margin-bottom: rem(32px);
+      }
+    }
+    // headlines, typically Raleway
+    .a-h\(64\),
+    .a-h\(48\),
+    .a-h\(40\) {
+      @extend %titles;
+      font-size: rem(32px);
+      line-height: rem(40px);
+      padding: rem(1px) 0 rem(7px);
+      //margin-bottom: rem(-8px);
+    }
+    .a-h\(32\) {  //h2
+      @extend %titles;
+      font-size: rem(32px);
+      line-height: rem(40px);
+      padding: rem(1px) 0 rem(7px);
+      margin-bottom: rem(-8px);
+
+      &--lineHr {
+        padding-bottom: 39px;
+        position: relative;
+
+        &:after {
+          width: 100%;
+          height: rem(1px);
+          background: $active-1;
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: rem(23px);
+          left: 0;
+        }
+      }
+    }
+    .a-h\(28\) {   //h3
+      @extend %titles;
+      font-size: rem(28px);
+      line-height: rem(32px);
+      padding: rem(7px) 0 rem(1px);
+
+      &--lineHr {
+        padding-bottom: 33px;
+        position: relative;
+
+        &:after {
+          width: 100%;
+          height: rem(1px);
+          background: $active-1;
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: rem(15px);
+          left: 0;
+        }
+      }
+    }
+    .a-h\(22\) {  //h4
+      @extend %titles;
+      font-size: rem(22px);
+      line-height: rem(32px);
+
+      &--lineHr {
+        padding-bottom: 32px;
+        position: relative;
+
+        &:after {
+          width: 100%;
+          height: rem(1px);
+          background: $active-1;
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: rem(15px);
+          left: 0;
+        }
+      }
+    }
+
+
+    // subheadlines, typically Work Sans
+    .a-s\(16\) {  //s1
+      @extend %copy;
+      font-size: rem(16px);
+      line-height: rem(24px);
+      letter-spacing: rem(2px);
+      text-transform: uppercase;
+      padding: rem(6px) 0 rem(2px);
+
+      &__decorator {
+        padding: rem(6px) rem(28px) rem(2px);
+        position: relative;
+
+        &:before,
+        &:after {
+          content: '\2014';
+          position: absolute;
+        }
+        &:before {
+          left: 0;
+        }
+        &:after {
+          right: 0;
+        }
+      }
+    }
+
+    .a-s\(18\) {  //s1
+      @extend %copy;
+      font-size: rem(18px);
+      line-height: rem(24px);
+      letter-spacing: rem(4px);
+      text-transform: uppercase;
+      padding: rem(6px) 0 rem(2px);
+
+      &__decorator {
+        padding: rem(6px) rem(28px) rem(2px);
+        position: relative;
+
+        &:before,
+        &:after {
+          content: '\2014';
+          position: absolute;
+        }
+        &:before {
+          left: 0;
+        }
+        &:after {
+          right: 0;
+        }
+      }
+    }
+    .a-s\(32\) {  //s4
+      @extend %copy;
+      font-size: rem(32px);
+      line-height: rem(40px);
+      padding: rem(1px) 0 rem(7px);
+    }
+    .a-s\(28\) {
+      @extend %copy;
+      font-size: rem(28px);
+      line-height: rem(40px);
+      padding: rem(3px) 0 rem(5px);
+    }
+
+    .a-s\(22\),
+    .a-s\(20\) {
+      @extend %copy;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      padding: rem(5px) 0 rem(3px);
+    }
+
+
+
+    // copy text, always Work Sans
+    .a-p\(17\) {  //p1
+      @extend %copy;
+      font-size: rem(17px);
+      line-height: rem(24px);
+      color: $copy-2;
+      padding: rem(6px) 0 rem(2px);
+
+      // just a tad more spacing between elements
+      &--breaker {
+        margin: rem(8px) 0;
+      }
+    }
+
+    .a-p\(15\) {
+      @extend %copy;
+      font-size: rem(15px);
+      line-height: rem(24px);
+      color: $copy-2;
+      padding: rem(7px) 0 rem(1px);
+
+      // just a tad more spacing between elements
+      &--breaker {
+        margin: rem(8px) 0;
+      }
+    }
+
+    // alignment
+    .a-justify\(center\) {
+      text-align: center;
+    }
+
+
+    .a-highlight {
+      @include gradient-blue-horizontal;
+      padding: rem(8px) rem(16px);
+      color: white;
+    }
+
+
+
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    @media #{ $desktop--start } {
+      .a-h\(64\) {  //h1
+        font-size: rem(64px);
+        line-height: rem(72px);
+        padding: rem(4px) 0;
+      }
+      .a-h\(48\) {
+        font-size: rem(48px);
+        line-height: rem(56px);
+        padding: rem(3px) 0 rem(5px);
+      }
+
+      .a-h\(40\) {
+        font-size: rem(40px);
+        line-height: rem(48px);
+        padding: rem(3px) 0 rem(5px);
+      }
+
+      .a-s\(22\) {
+        font-size: rem(22px);
+        line-height: rem(32px);
+        padding: rem(1px) 0 rem(7px);
+      }
+
+      .a-h\(22\) {  //h4
+        font-size: rem(22px);
+        line-height: rem(32px);
+      }
+    }
