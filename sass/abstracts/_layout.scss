@@ -1,0 +1,82 @@
+//  --------------------------------------------------
+//  Layout abstracts
+
+//  - rules for how layout should be applied to the page
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .a-hide {
+      display: none !important;
+    }
+
+    .a-noScroll {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .a-ieWidthFix {
+      width: 100vw;
+      overflow-x: hidden;
+    }
+
+
+    .a-container {
+      max-width: rem(1368px);
+      margin: 0 auto;
+      padding-right: rem(24px);
+      padding-left: rem(24px);
+    }
+    .a-row {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      margin-right: rem(-12px);
+      margin-left: rem(-12px);
+    }
+
+      .a-col {
+        padding: 0 rem(12px);
+        @include flex-basis(100%);
+        max-width: 100%;
+
+        &--extraSpace {
+          padding: 0 rem(36px);
+        }
+      }
+
+
+
+//  --------------------------------------------------
+//  desktop styles (default)
+//  ==================================================
+    @media #{ $desktop--start } {
+      .a-col {
+        &--noSpace {
+          margin: 0 rem(-24px);
+        }
+        &--1-4 {
+          @include flex-basis(25%);
+          max-width: 25%;
+        }
+        &--1-2 {
+          @include flex-basis(50%);
+          max-width: 50%;
+        }
+        &--1-3 {
+          @include flex-basis(33.33%);
+          max-width: 33.33%;
+        }
+        &--2-3 {
+          @include flex-basis(66.66%);
+          max-width: 66.66%;
+        }
+      }
+    }
+
+    @media #{ $tablet--only } {
+      .a-col {
+        &--1-2-tabletOnly {
+          @include flex-basis(50%);
+          max-width: 50%;
+        }
+      }
+    }

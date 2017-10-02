@@ -1,0 +1,34 @@
+//  --------------------------------------------------
+//  iPad Display Basics
+
+//  - displays screen shots on an iPad
+
+//  --------------------------------------------------
+//  mobile styles (default)
+//  ==================================================
+    .b-ipadDisplay {
+      background: url('../images/ipad-screenless@2x.png') no-repeat top center/100% auto;
+      margin: 0;
+      max-height: rem(824px);
+
+      &__screen {
+        padding: 6.8% 14% 22.7% 12.9%;
+        margin-bottom: -14.8%;
+      }
+
+      &__img {
+        width: 100%;
+        height: auto;
+        border: 0.125rem solid black;
+      }
+    }
+
+
+//  --------------------------------------------------
+//  desktop styles
+//  ==================================================
+    @media #{ $desktop--start } {
+      .b-ipadDisplay {
+        margin: 0 rem(12px);
+      }
+    }
